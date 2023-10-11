@@ -1,20 +1,6 @@
 const loginUserEmail = localStorage.getItem('loginUserEmail');
 console.log(loginUserEmail);
 
-// Function to check loginUserEmail and redirect if it's null
-function checkLoginUserEmail() {
-    const storedEmail = localStorage.getItem('loginUserEmail');
-    if (storedEmail === null) {
-        // Redirect to login.html
-        window.location.href = 'login.html';
-    }
-}
-
-// Check loginUserEmail initially
-checkLoginUserEmail();
-
-// Check loginUserEmail every minute
-setInterval(checkLoginUserEmail, 60000);
 
 function loginUser() {
     const userEmail = document.getElementById('logEmail').value; // Assuming your email input has id 'email'
