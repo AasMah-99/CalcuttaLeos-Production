@@ -35,7 +35,7 @@
     </nav>
     <section class="page-section" id="enquiry">
         <div class="container">
-            <h2 class="section-heading h1" style="text-align: center;">Explore with Us</h2>
+            <h2 class="section-heading h1" style="text-align: center;">Admin Portal</h2>
             <hr><br>
             <ul class="nav nav-tabs nav-justified mb-3 flex-column flex-sm-row" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -65,7 +65,7 @@
                         <div class="row g-3">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" class="form-control" id="reg-childId" placeholder="Child Id" aria-label="ChildId"
+                                <input type="text" class="form-control" id="reg-childId" placeholder="Account Number" aria-label="ChildId"
                                     aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group mb-3">
@@ -88,8 +88,8 @@
                                     aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon2">Email</span>
-                                <input type="text" class="form-control" id="reg-email" placeholder="Email" aria-label="Email"
+                                <span class="input-group-text" id="basic-addon2">Username</span>
+                                <input type="text" class="form-control" id="reg-email" placeholder="Username" aria-label="Email"
                                     aria-describedby="basic-addon2">
                             </div>
 
@@ -110,7 +110,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Login User Email</th>
-                                <th scope="col">Child ID</th>
+                                <th scope="col">Account Number</th>
                                 <th scope="col">Debit Amount</th>
                                 <th scope="col">After Transaction Balance</th>
                             </tr>
@@ -123,11 +123,11 @@
                 <div class="tab-pane fade show active" id="Rentals" role="tabpanel" aria-labelledby="Rentals-tab">
                     <section>
                         <div class="container">
-                            <h1 style="text-align: center;">Child Details Page!</h1>
+                            <h1 style="text-align: center;">User Details Page!</h1>
                             <hr><br>
                             <div id="reader"></div>
                             <div class="mb-3">
-                                <label for="childId" class="form-label">Enter Child Id to Search</label>
+                                <label for="childId" class="form-label">Enter Account Number to Search</label>
                                 <input type="text" class="form-control" id="childId"
                                     placeholder="User Id">
                             </div>
@@ -141,9 +141,9 @@
                         <div class="container">
                             <div class="mb-3" id="user-info" style="display: block;">
                                 <hr><br>
-                                <h2>Child Information</h2>
-                                <p><strong>Username:</strong> <span id="user-username"></span></p>
-                                <p><strong>Card Balance:</strong> <span id="user-cBalance"></span></p>
+                                <h2>User Information</h2>
+                                <p><strong>Account Number : </strong> <span id="user-username"></span></p>
+                                <p><strong>Card Balance : </strong> <span id="user-cBalance"></span></p>
                             </div>
                         </div>
                         <br>
@@ -153,10 +153,8 @@
                                     <input type="text" id="card-credit" class="form-control" placeholder="Credit">
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary" onclick="updateCredit('addcredit')">+
-                                        Credit</button>
-                                    <button type="submit" class="btn btn-primary" onclick="updateCredit('subcredit')">-
-                                        Credit</button>
+                                    <button type="submit" class="btn btn-primary" onclick="updateCredit('addcredit')">Top-Up</button>
+                                    <button type="submit" class="btn btn-primary" onclick="updateCredit('subcredit')">Deduct</button>
                                 </div>
                             </div>
                         </div>

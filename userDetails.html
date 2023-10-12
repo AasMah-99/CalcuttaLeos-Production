@@ -41,9 +41,10 @@
             <hr />
             <br />
             <div id="reader"></div>
+            <br />
             <div class="mb-3">
-                <label for="childId" class="form-label">Enter User Id to Search</label>
-                <input type="text" class="form-control" id="childId" placeholder="User Id" />
+                <label for="childId" class="form-label">Enter Account Number to Search</label>
+                <input type="text" class="form-control" id="childId" placeholder="Account Number" />
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary" onclick="childSearch()">Search</button>
@@ -57,8 +58,8 @@
                 <hr />
                 <br />
                 <h2>User Information</h2>
-                <p><strong>Username:</strong> <span id="user-username"></span></p>
-                <p><strong>Card Balance:</strong> <span id="user-cBalance"></span></p>
+                <p><strong>Account Number : </strong> <span id="user-username"></span></p>
+                <p><strong>Card Balance : </strong> <span id="user-cBalance"></span></p>
             </div>
         </div>
         <br />
@@ -69,7 +70,7 @@
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary" onclick="updateCredit('subcredit')">
-                        - Credit
+                        Deduct
                     </button>
                 </div>
             </div>
