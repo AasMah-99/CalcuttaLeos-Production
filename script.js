@@ -1,6 +1,10 @@
 const loginUserEmail = localStorage.getItem('loginUserEmail');
 console.log(loginUserEmail);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a72589dbc081e90f24d870cd2e0124c1b6cf478e
 function loginUser() {
     const userEmail = document.getElementById('logEmail').value; // Assuming your email input has id 'email'
     const userPassword = document.getElementById('logPass').value; // Assuming your password input has id 'password'
