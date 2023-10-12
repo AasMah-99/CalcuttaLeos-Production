@@ -124,8 +124,8 @@ function updateCredit(operation) {
                         .then(response => response.json())
                         .then(updatedUser => {
                             // Handle the updated user data if needed
-                            //usernameInput.textContent = user.userId;
-                            //cBalanceInput.textContent = user.cardBalance;
+                            usernameInput.textContent = user.userId;
+                            cBalanceInput.textContent = user.cardBalance;
                             console.log('User data updated:', updatedUser);
                             //transationHistory(user.userId, user.cardBalance, cardCreditInput, localStorage.getItem('loginUserEmail'));
                             const transactionData = {
