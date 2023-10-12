@@ -1,21 +1,6 @@
 const loginUserEmail = localStorage.getItem('loginUserEmail');
 console.log(loginUserEmail);
 
-// Function to check loginUserEmail and redirect if it's null
-function checkLoginUserEmail() {
-    const storedEmail = localStorage.getItem('loginUserEmail');
-    if (storedEmail === null) {
-        // Redirect to login.html
-        window.location.href = 'login.html';
-    }
-}
-
-// Check loginUserEmail initially
-checkLoginUserEmail();
-
-// Check loginUserEmail every minute
-setInterval(checkLoginUserEmail, 60000);
-
 function loginUser() {
     const userEmail = document.getElementById('logEmail').value; // Assuming your email input has id 'email'
     const userPassword = document.getElementById('logPass').value; // Assuming your password input has id 'password'
@@ -53,6 +38,7 @@ function loginUser() {
 }
 
 function logout() {
+    localStorage.setItem('loginUserEmail', null);
     window.location.href = "login.html";
     document.getElementById("logEmail").value = "";
     document.getElementById("logPass").value = "";
@@ -138,10 +124,9 @@ function updateCredit(operation) {
                         .then(response => response.json())
                         .then(updatedUser => {
                             // Handle the updated user data if needed
-                            //usernameInput.textContent = user.userId;
-                            //cBalanceInput.textContent = user.cardBalance;
+                            usernameInput.textContent = user.userId;
+                            cBalanceInput.textContent = user.cardBalance;
                             console.log('User data updated:', updatedUser);
-                            //transationHistory(user.userId, user.cardBalance, cardCreditInput, localStorage.getItem('loginUserEmail'));
                             const transactionData = {
                                 loginUserEmail: localStorage.getItem('loginUserEmail'),
                                 childId: user.userId,
