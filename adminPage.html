@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,29 +13,16 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><img src="logos/Bank Logo.png" alt="..." /></a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                </ul>
-                <div class="d-flex" role="search">
-                    <button class="btn btn-primary mx-2" type="submit" onclick="logout()">Logout</button>
-                </div>
+            <a class="navbar-brand" href="index.html"><img src="logos/Bank Logo copy.png" alt="..." /></a>
+            <div class="d-flex" role="search">
+                <button class="btn btn-primary mx-2" type="submit" onclick="logout()">Logout</button>
             </div>
         </div>
     </nav>
-    <section class="page-section" id="enquiry">
+    <section class="adminclassSection">
         <div class="container">
-            <h2 class="section-heading h1" style="text-align: center;">Admin Portal</h2>
+            <br>
+            <u><h1 class="section-heading" style="text-align: center; font-weight: bolder;">Admin Portal</h1></u>
             <hr><br>
             <ul class="nav nav-tabs nav-justified mb-3 flex-column flex-sm-row" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -84,8 +71,11 @@
                         <div class="row g-3">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Role</span>
-                                <input type="text" class="form-control" id="reg-role" placeholder="Role" aria-label="Role"
+                                <select class="form-control" id="reg-role" placeholder="Role" aria-label="Role"
                                     aria-describedby="basic-addon1">
+                                    <option selected value="volunteer">Volunteer</option>
+                                    <option value="admin">Admin</option>
+                                </select>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">Username</span>
@@ -118,47 +108,45 @@
                         <tbody>
                           <!-- Table rows will be dynamically added here -->
                         </tbody>
-                      </table>
+                    </table>
                 </div>
                 <div class="tab-pane fade show active" id="Rentals" role="tabpanel" aria-labelledby="Rentals-tab">
-                    <section>
-                        <div class="container">
-                            <h1 style="text-align: center;">User Details Page!</h1>
-                            <hr><br>
-                            <div id="reader"></div>
+                    <div class="container">
+                        <u><h1 style="text-align: center; font-weight: bolder;">User Details Page!</h1></u>
+                        <hr><br>
+                        <div id="reader"></div>
+                        <br>
+                        <div class="mb-3">
+                            <label for="childId" class="form-label">Account Number</label>
+                            <input type="text" class="form-control" id="childId"
+                                placeholder="Enter Account Number to Search">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary" onclick="childSearch()">Search</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="mb-3" id="user-info">
+                            <br><hr>
+                            <u><h1 style="text-align: center; font-weight: bolder;">User Information</h1></u>
+                            <p><strong>Account Number : </strong> <span id="user-username"></span></p>
+                            <p><strong>Card Balance : </strong> <span id="user-cBalance"></span></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div id="card-info">
                             <div class="mb-3">
-                                <label for="childId" class="form-label">Enter Account Number to Search</label>
-                                <input type="text" class="form-control" id="childId"
-                                    placeholder="User Id">
+                                <input type="text" id="card-credit" class="form-control" placeholder="Credit">
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary" onclick="childSearch()">Search</button>
+                                <button type="submit" class="btn btn-primary" onclick="updateCredit('addcredit')">Top-Up</button>
+                                <button type="submit" class="btn btn-primary" onclick="updateCredit('subcredit')">Deduct</button>
                             </div>
                         </div>
-                    </section>
-                    <br>
-                    <section>
-                        <div class="container">
-                            <div class="mb-3" id="user-info" style="display: block;">
-                                <hr><br>
-                                <h2>User Information</h2>
-                                <p><strong>Account Number : </strong> <span id="user-username"></span></p>
-                                <p><strong>Card Balance : </strong> <span id="user-cBalance"></span></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container">
-                            <div id="card-info" style="display: block;">
-                                <div class="mb-3">
-                                    <input type="text" id="card-credit" class="form-control" placeholder="Credit">
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary" onclick="updateCredit('addcredit')">Top-Up</button>
-                                    <button type="submit" class="btn btn-primary" onclick="updateCredit('subcredit')">Deduct</button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    </div>
+                    <br><br>
                 </div>
             </div>
         </div>

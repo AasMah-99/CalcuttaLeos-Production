@@ -6,7 +6,7 @@ function loginUser() {
     const userPassword = document.getElementById('logPass').value; // Assuming your password input has id 'password'
 
 
-    fetch('https://loginsystemjsonserver.onrender.com/users')
+    fetch('https://loginsystemjsondatabase.onrender.com/users')
         .then(response => response.json())
         .then(data => {
             // Find the user with the provided email and password
@@ -50,7 +50,7 @@ function childSearch(cId) {
     const cBalanceInput = document.getElementById("user-cBalance");
 
     // Make a GET request to the API
-    fetch('https://loginsystemjsonserver.onrender.com/childrenData')
+    fetch('https://loginsystemjsondatabase.onrender.com/childrenData')
         .then((response) => response.json())
         .then((data) => {
             // Find the user with the provided UID
@@ -89,7 +89,7 @@ function updateCredit(operation) {
     const usernameInput = document.getElementById("user-username");
     const cBalanceInput = document.getElementById("user-cBalance");
     let sign = "";
-    const apiUrl = 'https://loginsystemjsonserver.onrender.com/childrenData';
+    const apiUrl = 'https://loginsystemjsondatabase.onrender.com/childrenData';
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -135,7 +135,7 @@ function updateCredit(operation) {
                               };
                         
                             // Make a POST request to add transaction history
-                            fetch('https://loginsystemjsonserver.onrender.com/transationHistory', {
+                            fetch('https://loginsystemjsondatabase.onrender.com/transationHistory', {
                                 method: 'POST',
                                 headers: {
                                 'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ function updateCredit(operation) {
 }
 
 function newchildRegister() {
-    const apiUrl = 'https://loginsystemjsonserver.onrender.com/childrenData';
+    const apiUrl = 'https://loginsystemjsondatabase.onrender.com/childrenData';
     const regChildId = document.getElementById("reg-childId").value;
     const regChildBalance = parseInt(document.getElementById("reg-childBalance").value, 10);
 
@@ -216,7 +216,7 @@ function newchildRegister() {
 }
 
 function newuserregistration() {
-    const apiUrl = 'https://loginsystemjsonserver.onrender.com/users';
+    const apiUrl = 'https://loginsystemjsondatabase.onrender.com/users';
     const regEmail = document.getElementById("reg-email").value;
     const regPassword = document.getElementById("reg-password").value;
     const regRole = document.getElementById("reg-role").value;
@@ -274,7 +274,7 @@ function populateTransactionTable() {
     tableBody.innerHTML = '';
   
     // Fetch transaction history data from the server
-    fetch('https://loginsystemjsonserver.onrender.com/transationHistory')
+    fetch('https://loginsystemjsondatabase.onrender.com/transationHistory')
       .then(response => response.json())
       .then(data => {
         // Iterate through the transaction data and create table rows
